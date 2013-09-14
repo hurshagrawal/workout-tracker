@@ -1,13 +1,18 @@
 //
-//  WTViewController.h
+//  Exercise.m
 //  WorkoutTracker
 //
 //  Created by Hursh Agrawal on 9/14/13.
 //  Copyright (c) 2013 Hursh Agrawal. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "Exercise.h"
+#import "Activity.h"
 
-@interface WTViewController : UIViewController
+
+@implementation Exercise
+
+@dynamic name;
+@dynamic activities;
 
 @end

@@ -14,13 +14,18 @@
 		B818AAE417E4DC1500DBD0BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B818AAE317E4DC1500DBD0BB /* main.m */; };
 		B818AAE817E4DC1600DBD0BB /* WTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B818AAE717E4DC1600DBD0BB /* WTAppDelegate.m */; };
 		B818AAEB17E4DC1600DBD0BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B818AAE917E4DC1600DBD0BB /* Main.storyboard */; };
-		B818AAEE17E4DC1600DBD0BB /* WTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B818AAED17E4DC1600DBD0BB /* WTViewController.m */; };
 		B818AAF017E4DC1600DBD0BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B818AAEF17E4DC1600DBD0BB /* Images.xcassets */; };
 		B818AAF717E4DC1600DBD0BB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B818AAF617E4DC1600DBD0BB /* XCTest.framework */; };
 		B818AAF817E4DC1600DBD0BB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B818AAD717E4DC1500DBD0BB /* Foundation.framework */; };
 		B818AAF917E4DC1600DBD0BB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B818AADB17E4DC1500DBD0BB /* UIKit.framework */; };
 		B818AB0117E4DC1600DBD0BB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B818AAFF17E4DC1600DBD0BB /* InfoPlist.strings */; };
 		B818AB0317E4DC1600DBD0BB /* WorkoutTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B818AB0217E4DC1600DBD0BB /* WorkoutTrackerTests.m */; };
+		B818AB0D17E4DC7C00DBD0BB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B818AB0C17E4DC7C00DBD0BB /* CoreData.framework */; };
+		B818AB1017E4DCC800DBD0BB /* WorkoutTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B818AB0E17E4DCC800DBD0BB /* WorkoutTracker.xcdatamodeld */; };
+		B8B68CB517E507D000BB8AEF /* WTDailyActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B68CB417E507D000BB8AEF /* WTDailyActivityViewController.m */; };
+		B8B68CB817E50C6000BB8AEF /* Set.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B68CB717E50C6000BB8AEF /* Set.m */; };
+		B8B68CBB17E50C6000BB8AEF /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B68CBA17E50C6000BB8AEF /* Activity.m */; };
+		B8B68CBE17E50C6000BB8AEF /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B68CBD17E50C6000BB8AEF /* Exercise.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +50,22 @@
 		B818AAE617E4DC1600DBD0BB /* WTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTAppDelegate.h; sourceTree = "<group>"; };
 		B818AAE717E4DC1600DBD0BB /* WTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTAppDelegate.m; sourceTree = "<group>"; };
 		B818AAEA17E4DC1600DBD0BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B818AAEC17E4DC1600DBD0BB /* WTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTViewController.h; sourceTree = "<group>"; };
-		B818AAED17E4DC1600DBD0BB /* WTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTViewController.m; sourceTree = "<group>"; };
 		B818AAEF17E4DC1600DBD0BB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B818AAF517E4DC1600DBD0BB /* WorkoutTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkoutTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B818AAF617E4DC1600DBD0BB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		B818AAFE17E4DC1600DBD0BB /* WorkoutTrackerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WorkoutTrackerTests-Info.plist"; sourceTree = "<group>"; };
 		B818AB0017E4DC1600DBD0BB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B818AB0217E4DC1600DBD0BB /* WorkoutTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkoutTrackerTests.m; sourceTree = "<group>"; };
+		B818AB0C17E4DC7C00DBD0BB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B818AB0F17E4DCC800DBD0BB /* WorkoutTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WorkoutTracker.xcdatamodel; sourceTree = "<group>"; };
+		B8B68CB317E507D000BB8AEF /* WTDailyActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTDailyActivityViewController.h; sourceTree = "<group>"; };
+		B8B68CB417E507D000BB8AEF /* WTDailyActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTDailyActivityViewController.m; sourceTree = "<group>"; };
+		B8B68CB617E50C6000BB8AEF /* Set.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Set.h; path = models/Set.h; sourceTree = "<group>"; };
+		B8B68CB717E50C6000BB8AEF /* Set.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Set.m; path = models/Set.m; sourceTree = "<group>"; };
+		B8B68CB917E50C6000BB8AEF /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Activity.h; path = models/Activity.h; sourceTree = "<group>"; };
+		B8B68CBA17E50C6000BB8AEF /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Activity.m; path = models/Activity.m; sourceTree = "<group>"; };
+		B8B68CBC17E50C6000BB8AEF /* Exercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Exercise.h; path = models/Exercise.h; sourceTree = "<group>"; };
+		B8B68CBD17E50C6000BB8AEF /* Exercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Exercise.m; path = models/Exercise.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B818AB0D17E4DC7C00DBD0BB /* CoreData.framework in Frameworks */,
 				B818AADA17E4DC1500DBD0BB /* CoreGraphics.framework in Frameworks */,
 				B818AADC17E4DC1500DBD0BB /* UIKit.framework in Frameworks */,
 				B818AAD817E4DC1500DBD0BB /* Foundation.framework in Frameworks */,
@@ -101,6 +115,7 @@
 		B818AAD617E4DC1500DBD0BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B818AB0C17E4DC7C00DBD0BB /* CoreData.framework */,
 				B818AAD717E4DC1500DBD0BB /* Foundation.framework */,
 				B818AAD917E4DC1500DBD0BB /* CoreGraphics.framework */,
 				B818AADB17E4DC1500DBD0BB /* UIKit.framework */,
@@ -112,13 +127,15 @@
 		B818AADD17E4DC1500DBD0BB /* WorkoutTracker */ = {
 			isa = PBXGroup;
 			children = (
+				B8B68CB317E507D000BB8AEF /* WTDailyActivityViewController.h */,
+				B8B68CB417E507D000BB8AEF /* WTDailyActivityViewController.m */,
 				B818AAE617E4DC1600DBD0BB /* WTAppDelegate.h */,
 				B818AAE717E4DC1600DBD0BB /* WTAppDelegate.m */,
 				B818AAE917E4DC1600DBD0BB /* Main.storyboard */,
-				B818AAEC17E4DC1600DBD0BB /* WTViewController.h */,
-				B818AAED17E4DC1600DBD0BB /* WTViewController.m */,
 				B818AAEF17E4DC1600DBD0BB /* Images.xcassets */,
 				B818AADE17E4DC1500DBD0BB /* Supporting Files */,
+				B818AB0E17E4DCC800DBD0BB /* WorkoutTracker.xcdatamodeld */,
+				B8B68CBF17E50C6A00BB8AEF /* models */,
 			);
 			path = WorkoutTracker;
 			sourceTree = "<group>";
@@ -150,6 +167,19 @@
 				B818AAFF17E4DC1600DBD0BB /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B8B68CBF17E50C6A00BB8AEF /* models */ = {
+			isa = PBXGroup;
+			children = (
+				B8B68CBC17E50C6000BB8AEF /* Exercise.h */,
+				B8B68CBD17E50C6000BB8AEF /* Exercise.m */,
+				B8B68CB917E50C6000BB8AEF /* Activity.h */,
+				B8B68CBA17E50C6000BB8AEF /* Activity.m */,
+				B8B68CB617E50C6000BB8AEF /* Set.h */,
+				B8B68CB717E50C6000BB8AEF /* Set.m */,
+			);
+			name = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,9 +280,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8B68CB517E507D000BB8AEF /* WTDailyActivityViewController.m in Sources */,
 				B818AAE417E4DC1500DBD0BB /* main.m in Sources */,
 				B818AAE817E4DC1600DBD0BB /* WTAppDelegate.m in Sources */,
-				B818AAEE17E4DC1600DBD0BB /* WTViewController.m in Sources */,
+				B8B68CB817E50C6000BB8AEF /* Set.m in Sources */,
+				B8B68CBB17E50C6000BB8AEF /* Activity.m in Sources */,
+				B8B68CBE17E50C6000BB8AEF /* Exercise.m in Sources */,
+				B818AB1017E4DCC800DBD0BB /* WorkoutTracker.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +489,7 @@
 				B818AB0817E4DC1600DBD0BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B818AB0917E4DC1600DBD0BB /* Build configuration list for PBXNativeTarget "WorkoutTrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -463,8 +498,22 @@
 				B818AB0B17E4DC1600DBD0BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B818AB0E17E4DCC800DBD0BB /* WorkoutTracker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B818AB0F17E4DCC800DBD0BB /* WorkoutTracker.xcdatamodel */,
+			);
+			currentVersion = B818AB0F17E4DCC800DBD0BB /* WorkoutTracker.xcdatamodel */;
+			path = WorkoutTracker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B818AACC17E4DC1500DBD0BB /* Project object */;
 }
