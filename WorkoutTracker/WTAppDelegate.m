@@ -25,24 +25,25 @@
     controller.managedObjectContext = self.managedObjectContext;
     
     // MAKE STUB DATA
-    Exercise *exercise = [NSEntityDescription insertNewObjectForEntityForName:@"Exercise" inManagedObjectContext:self.managedObjectContext];
-    exercise.name = @"Bench Press";
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Activity" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
     
-    Activity *activity = [NSEntityDescription insertNewObjectForEntityForName:@"Activity" inManagedObjectContext:self.managedObjectContext];
-    activity.createdAt = [NSDate date];
     
-    activity.exercise = exercise;
-    [exercise addActivitiesObject:activity];
+    
+    NSError *error;
+    NSArray *activities = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    NSUInteger randomIndex = arc4random() % [activities count];
+    Activity *activity = activities[randomIndex];
     
     Set *set = [NSEntityDescription insertNewObjectForEntityForName:@"Set" inManagedObjectContext:self.managedObjectContext];
     set.createdAt = [NSDate date];
     set.repetitions = @5;
-    set.weight = @150;
+    set.weight = @125;
     
     set.activity = activity;
     [activity addSetsObject:set];
     
-    NSError *error;
     if (![self.managedObjectContext save:&error]) {
         NSLog(@"Whoops, we couldn't save %@", [error localizedDescription]);
     }

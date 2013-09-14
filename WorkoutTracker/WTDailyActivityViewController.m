@@ -57,7 +57,7 @@
     NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
                                                                                                managedObjectContext:self.managedObjectContext
                                                                                                  sectionNameKeyPath:nil
-                                                                                                          cacheName:@"activities"];
+                                                                                                          cacheName:nil];
     self.fetchedResultsController = fetchedResultsController;
     _fetchedResultsController.delegate = self;
     
@@ -74,21 +74,28 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     id sectionInfo = self.fetchedResultsController.sections[section];
-    return [sectionInfo numberOfObjects];
+    return ([sectionInfo numberOfObjects] + 1); // 1 extra for the "new exercise" button
 }
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    Activity *activity = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = activity.exercise.name;
+    if ([indexPath indexAtPosition:1] == [self.fetchedResultsController.fetchedObjects count]) {
+        // If this is the last cell
+        cell.textLabel.text = @"New exercise...";
+        cell.detailTextLabel.text = nil;
+    } else {
+        Activity *activity = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    NSMutableArray *exerciseText = [[NSMutableArray alloc] init];
-    for (Set *set in activity.sets) {
-        NSString *setString = [NSString stringWithFormat:@"%@ x %@", set.repetitions, set.weight];
-        [exerciseText addObject:setString];
-    }
-    
-    cell.detailTextLabel.text = [exerciseText componentsJoinedByString:@", "];
+        cell.textLabel.text = activity.exercise.name;
+        
+        NSMutableArray *exerciseText = [[NSMutableArray alloc] init];
+        for (Set *set in activity.sets) {
+            NSString *setString = [NSString stringWithFormat:@"%@ x %@", set.repetitions, set.weight];
+            [exerciseText addObject:setString];
+        }
+        
+            cell.detailTextLabel.text = [exerciseText componentsJoinedByString:@", "];
+        }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
