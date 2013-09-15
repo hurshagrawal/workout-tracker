@@ -16,4 +16,15 @@
 @dynamic exercise;
 @dynamic sets;
 
+- (NSString *)setDescription
+{
+    NSMutableArray *exerciseText = [[NSMutableArray alloc] init];
+    for (Set *set in self.sets) {
+        NSString *setString = [NSString stringWithFormat:@"%@ x %@", set.repetitions, set.weight];
+        [exerciseText addObject:setString];
+    }
+    
+    return [exerciseText componentsJoinedByString:@", "];
+}
+
 @end

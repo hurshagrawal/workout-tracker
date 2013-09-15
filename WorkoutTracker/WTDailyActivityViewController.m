@@ -87,15 +87,8 @@
         Activity *activity = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
         cell.textLabel.text = activity.exercise.name;
-        
-        NSMutableArray *exerciseText = [[NSMutableArray alloc] init];
-        for (Set *set in activity.sets) {
-            NSString *setString = [NSString stringWithFormat:@"%@ x %@", set.repetitions, set.weight];
-            [exerciseText addObject:setString];
-        }
-        
-            cell.detailTextLabel.text = [exerciseText componentsJoinedByString:@", "];
-        }
+        cell.detailTextLabel.text = [activity setDescription];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -106,6 +99,19 @@
     [self configureCell:cell atIndexPath:indexPath];
     
     return cell;
+}
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([indexPath indexAtPosition:1] == [self.fetchedResultsController.fetchedObjects count]) {
+        // If this is the last cell
+        NSLog(@"Create a new exercise...");
+    } else {
+        Activity *activity = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        NSLog(@"Selected this guy --> %@ %@", activity.exercise.name, [activity setDescription]);
+    }
 }
 
 /*
