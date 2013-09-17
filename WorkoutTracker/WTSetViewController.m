@@ -7,6 +7,8 @@
 //
 
 #import "WTSetViewController.h"
+#import "WTSetsTableViewCell.h"
+#import "Set.h"
 
 @interface WTSetViewController ()
 
@@ -33,25 +35,24 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"SetCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    WTSetsTableViewCell *cell;
     
-    if ([indexPath indexAtPosition:1] >= [self.activity.sets count]) {
-        // Last cell - should contain Add/Clone buttons
+    NSSortDescriptor *sortDescriptors = [NSSortDescriptor sortDescriptorWithKey:@"createdAt" ascending:YES];
+    NSArray *sets = [self.activity.sets sortedArrayUsingDescriptors:@[sortDescriptors]];
+    
+    if (indexPath.row >= [sets count]) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"SetCell" forIndexPath:indexPath];
     } else {
-        // Add two textfields, fill them with current data
+        // Fill each text field with the correct value
+        cell = [tableView dequeueReusableCellWithIdentifier:@"SetCell" forIndexPath:indexPath];
+        Set *set = sets[indexPath.row];
+        
+        cell.weightTextField.text = [set.weight stringValue];
+        cell.repsTextField.text = [set.repetitions stringValue];
     }
     
     return cell;
 }
 
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
 
 @end
