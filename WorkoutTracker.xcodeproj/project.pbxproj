@@ -22,6 +22,8 @@
 		B818AB0317E4DC1600DBD0BB /* WorkoutTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B818AB0217E4DC1600DBD0BB /* WorkoutTrackerTests.m */; };
 		B818AB0D17E4DC7C00DBD0BB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B818AB0C17E4DC7C00DBD0BB /* CoreData.framework */; };
 		B818AB1017E4DCC800DBD0BB /* WorkoutTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B818AB0E17E4DCC800DBD0BB /* WorkoutTracker.xcdatamodeld */; };
+		B82A9EBD17E6483F006FBDE8 /* WTSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B82A9EBC17E6483F006FBDE8 /* WTSetViewController.m */; };
+		B82A9EC017E6485A006FBDE8 /* WTExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B82A9EBF17E6485A006FBDE8 /* WTExerciseViewController.m */; };
 		B8B68CB517E507D000BB8AEF /* WTDailyActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B68CB417E507D000BB8AEF /* WTDailyActivityViewController.m */; };
 		B8B68CB817E50C6000BB8AEF /* Set.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B68CB717E50C6000BB8AEF /* Set.m */; };
 		B8B68CBB17E50C6000BB8AEF /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B68CBA17E50C6000BB8AEF /* Activity.m */; };
@@ -58,6 +60,10 @@
 		B818AB0217E4DC1600DBD0BB /* WorkoutTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkoutTrackerTests.m; sourceTree = "<group>"; };
 		B818AB0C17E4DC7C00DBD0BB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		B818AB0F17E4DCC800DBD0BB /* WorkoutTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WorkoutTracker.xcdatamodel; sourceTree = "<group>"; };
+		B82A9EBB17E6483F006FBDE8 /* WTSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTSetViewController.h; sourceTree = "<group>"; };
+		B82A9EBC17E6483F006FBDE8 /* WTSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTSetViewController.m; sourceTree = "<group>"; };
+		B82A9EBE17E6485A006FBDE8 /* WTExerciseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTExerciseViewController.h; sourceTree = "<group>"; };
+		B82A9EBF17E6485A006FBDE8 /* WTExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTExerciseViewController.m; sourceTree = "<group>"; };
 		B8B68CB317E507D000BB8AEF /* WTDailyActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTDailyActivityViewController.h; sourceTree = "<group>"; };
 		B8B68CB417E507D000BB8AEF /* WTDailyActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTDailyActivityViewController.m; sourceTree = "<group>"; };
 		B8B68CB617E50C6000BB8AEF /* Set.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Set.h; path = models/Set.h; sourceTree = "<group>"; };
@@ -132,6 +138,10 @@
 				B818AAE617E4DC1600DBD0BB /* WTAppDelegate.h */,
 				B818AAE717E4DC1600DBD0BB /* WTAppDelegate.m */,
 				B818AAE917E4DC1600DBD0BB /* Main.storyboard */,
+				B82A9EBE17E6485A006FBDE8 /* WTExerciseViewController.h */,
+				B82A9EBF17E6485A006FBDE8 /* WTExerciseViewController.m */,
+				B82A9EBB17E6483F006FBDE8 /* WTSetViewController.h */,
+				B82A9EBC17E6483F006FBDE8 /* WTSetViewController.m */,
 				B818AAEF17E4DC1600DBD0BB /* Images.xcassets */,
 				B818AADE17E4DC1500DBD0BB /* Supporting Files */,
 				B818AB0E17E4DCC800DBD0BB /* WorkoutTracker.xcdatamodeld */,
@@ -281,11 +291,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8B68CB517E507D000BB8AEF /* WTDailyActivityViewController.m in Sources */,
+				B82A9EC017E6485A006FBDE8 /* WTExerciseViewController.m in Sources */,
 				B818AAE417E4DC1500DBD0BB /* main.m in Sources */,
 				B818AAE817E4DC1600DBD0BB /* WTAppDelegate.m in Sources */,
 				B8B68CB817E50C6000BB8AEF /* Set.m in Sources */,
 				B8B68CBB17E50C6000BB8AEF /* Activity.m in Sources */,
 				B8B68CBE17E50C6000BB8AEF /* Exercise.m in Sources */,
+				B82A9EBD17E6483F006FBDE8 /* WTSetViewController.m in Sources */,
 				B818AB1017E4DCC800DBD0BB /* WorkoutTracker.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

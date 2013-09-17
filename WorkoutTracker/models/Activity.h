@@ -25,6 +25,6 @@
 - (void)removeSetsObject:(Set *)value;
 - (void)addSets:(NSSet *)values;
 - (void)removeSets:(NSSet *)values;
-- (NSString *)setDescription;
+- (NSString *)descriptionForSets;
 
 @end

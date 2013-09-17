@@ -13,6 +13,7 @@
 
 @interface Exercise : NSManagedObject
 
+@property (nonatomic, retain) NSDate * createdAt;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSSet *activities;
 @end

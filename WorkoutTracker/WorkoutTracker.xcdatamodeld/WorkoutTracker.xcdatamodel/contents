@@ -6,6 +6,7 @@
         <relationship name="sets" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Set" inverseName="activity" inverseEntity="Set" syncable="YES"/>
     </entity>
     <entity name="Exercise" representedClassName="Exercise" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="activities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="exercise" inverseEntity="Activity" syncable="YES"/>
     </entity>

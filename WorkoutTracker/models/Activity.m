@@ -16,7 +16,7 @@
 @dynamic exercise;
 @dynamic sets;
 
-- (NSString *)setDescription
+- (NSString *)descriptionForSets
 {
     NSMutableArray *exerciseText = [[NSMutableArray alloc] init];
     for (Set *set in self.sets) {

@@ -12,6 +12,7 @@
 
 @implementation Exercise
 
+@dynamic createdAt;
 @dynamic name;
 @dynamic activities;
 

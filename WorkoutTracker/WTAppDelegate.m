@@ -38,8 +38,8 @@
     
     Set *set = [NSEntityDescription insertNewObjectForEntityForName:@"Set" inManagedObjectContext:self.managedObjectContext];
     set.createdAt = [NSDate date];
-    set.repetitions = @5;
-    set.weight = @125;
+    set.repetitions = @7;
+    set.weight = @110;
     
     set.activity = activity;
     [activity addSetsObject:set];
