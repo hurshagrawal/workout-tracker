@@ -21,6 +21,20 @@
     [super viewDidLoad];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    NSInteger section = [self.tableView numberOfSections] - 1;
+    NSInteger row = [self.tableView numberOfRowsInSection:section] - 1;
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];
+    
+    // Scroll to the bottom of the view
+    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+    
+    // Select the first cell in the last (the empty) row
+    WTSetsTableViewCell *selectedCell = (WTSetsTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+    [selectedCell.weightTextField becomeFirstResponder];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -41,7 +55,11 @@
     NSArray *sets = [self.activity.sets sortedArrayUsingDescriptors:@[sortDescriptors]];
     
     if (indexPath.row >= [sets count]) {
+        // Last, empty cell
         cell = [tableView dequeueReusableCellWithIdentifier:@"SetCell" forIndexPath:indexPath];
+        
+        cell.weightTextField.text = nil;
+        cell.repsTextField.text = nil;
     } else {
         // Fill each text field with the correct value
         cell = [tableView dequeueReusableCellWithIdentifier:@"SetCell" forIndexPath:indexPath];
