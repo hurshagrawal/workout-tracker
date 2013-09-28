@@ -10,4 +10,10 @@
 
 @implementation WTSetsTableViewCell
 
+- (void)prepareForReuse
+{
+    self.weightTextField.delegate = nil;
+    self.repsTextField.delegate = nil;
+}
+
 @end

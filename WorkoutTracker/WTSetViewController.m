@@ -23,16 +23,15 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    NSInteger section = [self.tableView numberOfSections] - 1;
-    NSInteger row = [self.tableView numberOfRowsInSection:section] - 1;
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];
-    
-    // Scroll to the bottom of the view
-    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
-    
-    // Select the first cell in the last (the empty) row
-    WTSetsTableViewCell *selectedCell = (WTSetsTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-    [selectedCell.weightTextField becomeFirstResponder];
+    if ([self.activity.sets count] == 0) {
+        NSInteger section = [self.tableView numberOfSections] - 1;
+        NSInteger row = [self.tableView numberOfRowsInSection:section] - 1;
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:section];
+        
+        // Select the first cell in the last (the empty) row
+        WTSetsTableViewCell *selectedCell = (WTSetsTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+        [selectedCell.weightTextField becomeFirstResponder];
+    }
 }
 
 #pragma mark - Table view data source
@@ -47,12 +46,12 @@
     return [self.activity.sets count] + 1;
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     WTSetsTableViewCell *cell;
     
-    NSSortDescriptor *sortDescriptors = [NSSortDescriptor sortDescriptorWithKey:@"createdAt" ascending:YES];
-    NSArray *sets = [self.activity.sets sortedArrayUsingDescriptors:@[sortDescriptors]];
+    NSArray *sets = [self.activity setsSortedByDate];
     
     if (indexPath.row >= [sets count]) {
         // Last, empty cell
@@ -69,8 +68,41 @@
         cell.repsTextField.text = [set.repetitions stringValue];
     }
     
+    cell.weightTextField.delegate = self;
+    cell.repsTextField.delegate = self;
+    
     return cell;
 }
 
+#pragma mark - UI TextView Delegate
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    WTSetsTableViewCell* cell = (WTSetsTableViewCell *)[textField wt_superviewOfClass:[WTSetsTableViewCell class]];
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    
+    Set *set = nil;
+    
+    if (indexPath.row >= [self.tableView numberOfRowsInSection:indexPath.section] - 1) {
+        // If it's the last text field
+        
+        if (cell.weightTextField.text.length == 0 || cell.repsTextField.text.length == 0) {
+            return;
+        }
+        
+        set = [NSEntityDescription insertNewObjectForEntityForName:@"Set" inManagedObjectContext:self.managedObjectContext];
+        set.createdAt = [NSDate date];
+        set.activity = self.activity;
+        
+        [self.activity addSetsObject:set];
+    } else {
+        set = [self.activity setsSortedByDate][indexPath.row];
+    }
+    
+    set.weight = [NSNumber numberWithInt:[cell.weightTextField.text intValue]];
+    set.repetitions = [NSNumber numberWithInt:[cell.repsTextField.text intValue]];
+    
+    [self.tableView reloadData];
+}
 
 @end

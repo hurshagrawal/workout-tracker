@@ -29,6 +29,7 @@
 		B8B68CB817E50C6000BB8AEF /* Set.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B68CB717E50C6000BB8AEF /* Set.m */; };
 		B8B68CBB17E50C6000BB8AEF /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B68CBA17E50C6000BB8AEF /* Activity.m */; };
 		B8B68CBE17E50C6000BB8AEF /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B68CBD17E50C6000BB8AEF /* Exercise.m */; };
+		B8ECA17E17F77786002343EA /* UIView+WTView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8ECA17D17F77786002343EA /* UIView+WTView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		B8B68CBA17E50C6000BB8AEF /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Activity.m; path = models/Activity.m; sourceTree = "<group>"; };
 		B8B68CBC17E50C6000BB8AEF /* Exercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Exercise.h; path = models/Exercise.h; sourceTree = "<group>"; };
 		B8B68CBD17E50C6000BB8AEF /* Exercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Exercise.m; path = models/Exercise.m; sourceTree = "<group>"; };
+		B8ECA17C17F77786002343EA /* UIView+WTView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+WTView.h"; path = "extensions/UIView+WTView.h"; sourceTree = "<group>"; };
+		B8ECA17D17F77786002343EA /* UIView+WTView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+WTView.m"; path = "extensions/UIView+WTView.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +139,7 @@
 		B818AADD17E4DC1500DBD0BB /* WorkoutTracker */ = {
 			isa = PBXGroup;
 			children = (
+				B8ECA17B17F77746002343EA /* extensions */,
 				B8B68CB317E507D000BB8AEF /* WTDailyActivityViewController.h */,
 				B8B68CB417E507D000BB8AEF /* WTDailyActivityViewController.m */,
 				B818AAE617E4DC1600DBD0BB /* WTAppDelegate.h */,
@@ -203,6 +207,15 @@
 				B8B68CB717E50C6000BB8AEF /* Set.m */,
 			);
 			name = models;
+			sourceTree = "<group>";
+		};
+		B8ECA17B17F77746002343EA /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B8ECA17C17F77786002343EA /* UIView+WTView.h */,
+				B8ECA17D17F77786002343EA /* UIView+WTView.m */,
+			);
+			name = extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +321,7 @@
 				B818AAE417E4DC1500DBD0BB /* main.m in Sources */,
 				B82F283417E7D9010032E6BD /* WTSetsTableViewCell.m in Sources */,
 				B818AAE817E4DC1600DBD0BB /* WTAppDelegate.m in Sources */,
+				B8ECA17E17F77786002343EA /* UIView+WTView.m in Sources */,
 				B8B68CB817E50C6000BB8AEF /* Set.m in Sources */,
 				B8B68CBB17E50C6000BB8AEF /* Activity.m in Sources */,
 				B8B68CBE17E50C6000BB8AEF /* Exercise.m in Sources */,

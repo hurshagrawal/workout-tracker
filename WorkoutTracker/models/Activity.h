@@ -26,5 +26,6 @@
 - (void)addSets:(NSSet *)values;
 - (void)removeSets:(NSSet *)values;
 - (NSString *)descriptionForSets;
+- (NSArray *)setsSortedByDate;
 
 @end

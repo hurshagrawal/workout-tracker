@@ -24,30 +24,6 @@
     WTDailyActivityViewController *controller = (WTDailyActivityViewController *)navigationController.topViewController;
     controller.managedObjectContext = self.managedObjectContext;
     
-    // MAKE STUB DATA
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Activity" inManagedObjectContext:self.managedObjectContext];
-    [fetchRequest setEntity:entity];
-    
-    
-    
-    NSError *error;
-    NSArray *activities = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    NSUInteger randomIndex = arc4random() % [activities count];
-    Activity *activity = activities[randomIndex];
-    
-    Set *set = [NSEntityDescription insertNewObjectForEntityForName:@"Set" inManagedObjectContext:self.managedObjectContext];
-    set.createdAt = [NSDate date];
-    set.repetitions = @7;
-    set.weight = @110;
-    
-    set.activity = activity;
-    [activity addSetsObject:set];
-    
-    if (![self.managedObjectContext save:&error]) {
-        NSLog(@"Whoops, we couldn't save %@", [error localizedDescription]);
-    }
-    
     return YES;
 }
 							
@@ -61,6 +37,11 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+   NSError *error;
+    if (![self.managedObjectContext save:&error]) {
+        NSLog(@"Whoops, we couldn't save %@", [error localizedDescription]);
+    }
+    
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -76,6 +57,10 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    NSError *error;
+    if (![self.managedObjectContext save:&error]) {
+        NSLog(@"Whoops, we couldn't save %@", [error localizedDescription]);
+    }
 }
 
 #pragma mark - Core Data stack

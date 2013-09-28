@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Activity.h"
 
-@interface WTSetViewController : UITableViewController
+@interface WTSetViewController : UITableViewController <UITextFieldDelegate>
 
 @property (nonatomic, strong) NSManagedObjectContext* managedObjectContext;
 @property (nonatomic, strong) Activity* activity;

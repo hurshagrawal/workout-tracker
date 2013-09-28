@@ -133,11 +133,6 @@
     activity.exercise = exercise;
     [exercise addActivitiesObject:activity];
     
-    NSError *error;
-    if (![self.managedObjectContext save:&error]) {
-        NSLog(@"Whoops, we couldn't save %@", [error localizedDescription]);
-    }
-   
     controller.activity = activity;
 }
 
