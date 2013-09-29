@@ -76,7 +76,7 @@
 
 #pragma mark - UI TextView Delegate
 
-- (void)textFieldDidEndEditing:(UITextField *)textField
+- (void)persistDataInTextField:(UITextField *)textField
 {
     WTSetsTableViewCell* cell = (WTSetsTableViewCell *)[textField wt_superviewOfClass:[WTSetsTableViewCell class]];
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
@@ -106,6 +106,11 @@
     
     set.weight = [NSNumber numberWithInt:[cell.weightTextField.text intValue]];
     set.repetitions = [NSNumber numberWithInt:[cell.repsTextField.text intValue]];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [self persistDataInTextField:textField];
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
@@ -152,10 +157,25 @@
     NSUInteger fieldIndex = [visibleFields indexOfObjectPassingTest:^BOOL (UITextField *textField, NSUInteger idx, BOOL *stop) {
         return [textField isFirstResponder];
     }];
-    
+
     if (fieldIndex + 1 < [visibleFields count]) {
         UITextField *nextField = visibleFields[fieldIndex + 1];
         [nextField becomeFirstResponder];
+    } else {
+        [self persistDataInTextField:visibleFields[fieldIndex]];
+        
+        // Requery for fields and select the next one
+        // TODO: DRY this up
+        NSArray *visibleFields = [self textFieldsInTableView];
+    
+        NSUInteger fieldIndex = [visibleFields indexOfObjectPassingTest:^BOOL (UITextField *textField, NSUInteger idx, BOOL *stop) {
+            return [textField isFirstResponder];
+        }];
+
+        if (fieldIndex + 1 < [visibleFields count]) {
+            UITextField *nextField = visibleFields[fieldIndex + 1];
+            [nextField becomeFirstResponder];
+        }
     }
 }
 

@@ -13,6 +13,7 @@
 @implementation Activity
 
 @dynamic createdAt;
+@dynamic performedAt;
 @dynamic exercise;
 @dynamic sets;
 

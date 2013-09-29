@@ -15,6 +15,7 @@
 @interface Activity : NSManagedObject
 
 @property (nonatomic, retain) NSDate * createdAt;
+@property (nonatomic, retain) NSDate * performedAt;
 @property (nonatomic, retain) Exercise *exercise;
 @property (nonatomic, retain) NSSet *sets;
 @end

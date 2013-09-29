@@ -130,6 +130,7 @@
     // Create a new activity from the exercise and set it in the new controller
     Activity *activity = [NSEntityDescription insertNewObjectForEntityForName:@"Activity" inManagedObjectContext:self.managedObjectContext];
     activity.createdAt = [NSDate date];
+    activity.performedAt = self.currentlyEditingDate;
     activity.exercise = exercise;
     [exercise addActivitiesObject:activity];
     

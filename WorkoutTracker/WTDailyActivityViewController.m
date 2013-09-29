@@ -23,14 +23,8 @@
 {
     [super viewDidLoad];
 
-
-    NSError *error;
-    if (![self.fetchedResultsController performFetch:&error]) {
-        NSLog(@"Unresolved error %@, %@", error, error.userInfo);
-        exit(-1);
-    }
-
-    self.title = @"Today";
+    self.currentlyEditingDate = [[NSDate date] beginningOfDay];
+    [self reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -38,14 +32,14 @@
     [self.tableView reloadData];
 }
 
+
 - (NSFetchedResultsController *)fetchedResultsController
 {
     if (_fetchedResultsController != nil) {
         return _fetchedResultsController;
     }
 
-    // Setup the fetchedResultsController and pull all Activities
-    // TODO: Pull only activities for that day
+    // Setup the fetchedResultsController and pull activities
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Activity" inManagedObjectContext:self.managedObjectContext];
 
@@ -55,6 +49,12 @@
     [fetchRequest setSortDescriptors:@[sort]];
 
     [fetchRequest setFetchBatchSize:20];
+    
+    // Get only activities from the proper date range
+    NSDate *startDate = self.currentlyEditingDate;
+    NSDate *endDate = [self.currentlyEditingDate endOfDay];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(performedAt >= %@) AND (performedAt <= %@)", startDate, endDate];
+    [fetchRequest setPredicate:predicate];
 
     NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
                                                                                                managedObjectContext:self.managedObjectContext
@@ -64,6 +64,43 @@
     _fetchedResultsController.delegate = self;
 
     return _fetchedResultsController;
+}
+
+#pragma mark - Day navigation
+
+- (void)resetTitle
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"EEE, MMM d ''yy"];
+    
+    self.title = [dateFormatter stringFromDate:self.currentlyEditingDate];
+}
+
+- (void)reloadData
+{
+    [self resetTitle];
+    
+    self.fetchedResultsController = nil;
+    
+    NSError *error;
+    if (![self.fetchedResultsController performFetch:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, error.userInfo);
+        exit(-1);
+    }
+    
+    [self.tableView reloadData];
+}
+
+- (IBAction)selectPreviousDay:(UIButton *)sender {
+    NSTimeInterval subtractDay = -24 * 60 * 60;
+    self.currentlyEditingDate = [self.currentlyEditingDate dateByAddingTimeInterval:subtractDay];
+    [self reloadData];
+}
+
+- (IBAction)selectNextDay:(UIButton *)sender {
+    NSTimeInterval addDay = 24 * 60 * 60;
+    self.currentlyEditingDate = [self.currentlyEditingDate dateByAddingTimeInterval:addDay];
+    [self reloadData];
 }
 
 #pragma mark - Table view data source
@@ -82,7 +119,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell;
-    
+   
     if (indexPath.row == [self.fetchedResultsController.fetchedObjects count]) {
         // If this is the last cell - i.e. "New exercise button"
         cell = [tableView dequeueReusableCellWithIdentifier:@"NewExerciseCell" forIndexPath:indexPath];
@@ -108,6 +145,7 @@
     if ([segue.identifier isEqualToString:@"ActivityToExercise"]) {
         WTExerciseViewController *controller = [segue destinationViewController];
         controller.managedObjectContext = self.managedObjectContext;
+        controller.currentlyEditingDate = self.currentlyEditingDate;
     } else if ([segue.identifier isEqualToString:@"ActivityToSet"]) {
         WTSetViewController *controller = [segue destinationViewController];
         controller.managedObjectContext = self.managedObjectContext;

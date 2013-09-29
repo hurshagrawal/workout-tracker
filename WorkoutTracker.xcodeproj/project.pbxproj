@@ -30,6 +30,7 @@
 		B8B68CBB17E50C6000BB8AEF /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B68CBA17E50C6000BB8AEF /* Activity.m */; };
 		B8B68CBE17E50C6000BB8AEF /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B68CBD17E50C6000BB8AEF /* Exercise.m */; };
 		B8ECA17E17F77786002343EA /* UIView+WTView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8ECA17D17F77786002343EA /* UIView+WTView.m */; };
+		B8ECA1F417F7D79E002343EA /* NSDate+WTDate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8ECA1F317F7D79E002343EA /* NSDate+WTDate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,9 @@
 		B8B68CBD17E50C6000BB8AEF /* Exercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Exercise.m; path = models/Exercise.m; sourceTree = "<group>"; };
 		B8ECA17C17F77786002343EA /* UIView+WTView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+WTView.h"; path = "extensions/UIView+WTView.h"; sourceTree = "<group>"; };
 		B8ECA17D17F77786002343EA /* UIView+WTView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+WTView.m"; path = "extensions/UIView+WTView.m"; sourceTree = "<group>"; };
+		B8ECA1F117F7D165002343EA /* WorkoutTracker 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkoutTracker 2.xcdatamodel"; sourceTree = "<group>"; };
+		B8ECA1F217F7D79E002343EA /* NSDate+WTDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+WTDate.h"; path = "extensions/NSDate+WTDate.h"; sourceTree = "<group>"; };
+		B8ECA1F317F7D79E002343EA /* NSDate+WTDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+WTDate.m"; path = "extensions/NSDate+WTDate.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +216,8 @@
 		B8ECA17B17F77746002343EA /* extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B8ECA1F217F7D79E002343EA /* NSDate+WTDate.h */,
+				B8ECA1F317F7D79E002343EA /* NSDate+WTDate.m */,
 				B8ECA17C17F77786002343EA /* UIView+WTView.h */,
 				B8ECA17D17F77786002343EA /* UIView+WTView.m */,
 			);
@@ -323,6 +329,7 @@
 				B818AAE417E4DC1500DBD0BB /* main.m in Sources */,
 				B82F283417E7D9010032E6BD /* WTSetsTableViewCell.m in Sources */,
 				B818AAE817E4DC1600DBD0BB /* WTAppDelegate.m in Sources */,
+				B8ECA1F417F7D79E002343EA /* NSDate+WTDate.m in Sources */,
 				B8ECA17E17F77786002343EA /* UIView+WTView.m in Sources */,
 				B8B68CB817E50C6000BB8AEF /* Set.m in Sources */,
 				B8B68CBB17E50C6000BB8AEF /* Activity.m in Sources */,
@@ -548,9 +555,10 @@
 		B818AB0E17E4DCC800DBD0BB /* WorkoutTracker.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				B8ECA1F117F7D165002343EA /* WorkoutTracker 2.xcdatamodel */,
 				B818AB0F17E4DCC800DBD0BB /* WorkoutTracker.xcdatamodel */,
 			);
-			currentVersion = B818AB0F17E4DCC800DBD0BB /* WorkoutTracker.xcdatamodel */;
+			currentVersion = B8ECA1F117F7D165002343EA /* WorkoutTracker 2.xcdatamodel */;
 			path = WorkoutTracker.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
