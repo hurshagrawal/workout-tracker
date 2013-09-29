@@ -11,6 +11,11 @@
 
 @interface WTSetViewController : UITableViewController <UITextFieldDelegate>
 
+typedef NS_ENUM(NSInteger, WTSetTextViewTag) {
+    WTWeightTextViewTag = 1,
+    WTRepsTextViewTag = 2
+};
+
 @property (nonatomic, strong) NSManagedObjectContext* managedObjectContext;
 @property (nonatomic, strong) Activity* activity;
 

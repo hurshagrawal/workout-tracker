@@ -13,4 +13,6 @@
 @property (nonatomic, weak) IBOutlet UITextField *weightTextField;
 @property (nonatomic, weak) IBOutlet UITextField *repsTextField;
 
+- (void)selectRepsField;
+
 @end

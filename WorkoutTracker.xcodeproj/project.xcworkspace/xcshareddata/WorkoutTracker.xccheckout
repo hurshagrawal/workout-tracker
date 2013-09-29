@@ -12,6 +12,8 @@
 	<dict>
 		<key>86A48C85-5D3A-481B-BE08-8E7C8AD62728</key>
 		<string>ssh://github.com/hurshagrawal/workout-tracker.git</string>
+		<key>FEB2BFA4-A33B-445C-92EA-C05E4D079BCD</key>
+		<string>https://github.com/simonbs/BSKeyboardControls.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>WorkoutTracker.xcodeproj/project.xcworkspace</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>86A48C85-5D3A-481B-BE08-8E7C8AD62728</key>
 		<string>../..</string>
+		<key>FEB2BFA4-A33B-445C-92EA-C05E4D079BCD</key>
+		<string>../../WorkoutTracker/BSKeyboardControls</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>ssh://github.com/hurshagrawal/workout-tracker.git</string>
@@ -28,6 +32,14 @@
 	<string>86A48C85-5D3A-481B-BE08-8E7C8AD62728</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FEB2BFA4-A33B-445C-92EA-C05E4D079BCD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BSKeyboardControls</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

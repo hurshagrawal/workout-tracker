@@ -11,5 +11,6 @@
 @interface UIView (WTView)
 
 - (UIView *)wt_superviewOfClass:(Class)class;
+- (BOOL)wt_findAndResignFirstResponder;
 
 @end

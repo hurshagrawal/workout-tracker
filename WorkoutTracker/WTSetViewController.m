@@ -95,14 +95,88 @@
         set.activity = self.activity;
         
         [self.activity addSetsObject:set];
+        
+        // Insert a new row in the GUI
+        NSInteger lastRow = [self.tableView numberOfRowsInSection:indexPath.section];
+        NSIndexPath *indexToInsert = [NSIndexPath indexPathForRow:lastRow inSection:indexPath.section];
+        [self.tableView insertRowsAtIndexPaths:@[indexToInsert] withRowAnimation:UITableViewRowAnimationFade];
     } else {
         set = [self.activity setsSortedByDate][indexPath.row];
     }
     
     set.weight = [NSNumber numberWithInt:[cell.weightTextField.text intValue]];
     set.repetitions = [NSNumber numberWithInt:[cell.repsTextField.text intValue]];
-    
-    [self.tableView reloadData];
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    if (!textField.inputAccessoryView) {
+        textField.inputAccessoryView = [self inputAccessoryView];
+    }
+}
+                                       
+#pragma mark - InputAccessoryView methods
+
+- (UIView *)inputAccessoryView
+{
+    UIToolbar *toolbar = [[UIToolbar alloc] init];
+    [toolbar sizeToFit];
+    
+    UIBarButtonItem *previousButton = [[UIBarButtonItem alloc] initWithTitle:@"Prev" style:UIBarButtonItemStylePlain target:self action:@selector(selectPreviousTextField)];
+    UIBarButtonItem *nextButton = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:self action:@selector(selectNextTextField)];
+    UIBarButtonItem *separator = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self action:@selector(closeKeyboard)];
+    
+    [toolbar setItems:@[previousButton, nextButton, separator, doneButton]];
+    
+    return toolbar;
+}
+
+- (NSArray *)textFieldsInTableView
+{
+    NSArray *cells = [self.tableView visibleCells];
+    NSMutableArray *textFields = [[NSMutableArray alloc] init];
+    
+    for (WTSetsTableViewCell *cell in cells) {
+        [textFields addObject:cell.weightTextField];
+        [textFields addObject:cell.repsTextField];
+    }
+    
+    return textFields;
+}
+
+- (void)selectNextTextField
+{
+    NSArray *visibleFields = [self textFieldsInTableView];
+    
+    NSUInteger fieldIndex = [visibleFields indexOfObjectPassingTest:^BOOL (UITextField *textField, NSUInteger idx, BOOL *stop) {
+        return [textField isFirstResponder];
+    }];
+    
+    if (fieldIndex + 1 < [visibleFields count]) {
+        UITextField *nextField = visibleFields[fieldIndex + 1];
+        [nextField becomeFirstResponder];
+    }
+}
+
+- (void)selectPreviousTextField
+{
+    NSArray *visibleFields = [self textFieldsInTableView];
+    
+    NSUInteger fieldIndex = [visibleFields indexOfObjectPassingTest:^BOOL (UITextField *textField, NSUInteger idx, BOOL *stop) {
+        return [textField isFirstResponder];
+    }];
+    
+    if (fieldIndex != 0) {
+        UITextField *prevField = visibleFields[fieldIndex - 1];
+        [prevField becomeFirstResponder];
+    }
+}
+
+- (void)closeKeyboard
+{
+    [self.tableView wt_findAndResignFirstResponder];
+}
+                                       
+                                       
 @end
