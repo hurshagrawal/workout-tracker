@@ -81,7 +81,9 @@
     WTSetsTableViewCell* cell = (WTSetsTableViewCell *)[textField wt_superviewOfClass:[WTSetsTableViewCell class]];
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
     
-    Set *set = nil;
+    NSLog(@"Persisting data");
+    
+    Set *set;
     
     if (indexPath.row >= [self.tableView numberOfRowsInSection:indexPath.section] - 1) {
         // If it's the last text field

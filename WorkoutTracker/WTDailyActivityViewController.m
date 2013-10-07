@@ -24,12 +24,13 @@
     [super viewDidLoad];
 
     self.currentlyEditingDate = [[NSDate date] beginningOfDay];
-    [self reloadData];
+    [self reloadDataWithAnimation:UITableViewRowAnimationNone];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [self.tableView reloadData];
+    
 }
 
 
@@ -49,7 +50,7 @@
     [fetchRequest setSortDescriptors:@[sort]];
 
     [fetchRequest setFetchBatchSize:20];
-    
+
     // Get only activities from the proper date range
     NSDate *startDate = self.currentlyEditingDate;
     NSDate *endDate = [self.currentlyEditingDate endOfDay];
@@ -72,35 +73,40 @@
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"EEE, MMM d ''yy"];
-    
+
     self.title = [dateFormatter stringFromDate:self.currentlyEditingDate];
 }
 
-- (void)reloadData
+- (void)reloadDataWithAnimation:(UITableViewRowAnimation)animation
 {
     [self resetTitle];
+
+    [self.tableView beginUpdates];
     
     self.fetchedResultsController = nil;
-    
+
     NSError *error;
     if (![self.fetchedResultsController performFetch:&error]) {
         NSLog(@"Unresolved error %@, %@", error, error.userInfo);
         exit(-1);
     }
+
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:animation];
     
-    [self.tableView reloadData];
+    [self.tableView endUpdates];
 }
 
 - (IBAction)selectPreviousDay:(UIButton *)sender {
     NSTimeInterval subtractDay = -24 * 60 * 60;
     self.currentlyEditingDate = [self.currentlyEditingDate dateByAddingTimeInterval:subtractDay];
-    [self reloadData];
+    [self reloadDataWithAnimation:UITableViewRowAnimationRight];
 }
 
 - (IBAction)selectNextDay:(UIButton *)sender {
     NSTimeInterval addDay = 24 * 60 * 60;
     self.currentlyEditingDate = [self.currentlyEditingDate dateByAddingTimeInterval:addDay];
-    [self reloadData];
+    [self reloadDataWithAnimation:UITableViewRowAnimationLeft];
+    
 }
 
 #pragma mark - Table view data source
@@ -119,20 +125,23 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell;
-   
+    
+    NSLog(@"Rendering a cell at index path %@", indexPath);
+    
+
     if (indexPath.row == [self.fetchedResultsController.fetchedObjects count]) {
         // If this is the last cell - i.e. "New exercise button"
         cell = [tableView dequeueReusableCellWithIdentifier:@"NewExerciseCell" forIndexPath:indexPath];
     } else {
         // If this is an existing activity
         cell = [tableView dequeueReusableCellWithIdentifier:@"ActivityCell" forIndexPath:indexPath];
-        
+
         Activity *activity = [self.fetchedResultsController objectAtIndexPath:indexPath];
 
         cell.textLabel.text = activity.exercise.name;
         cell.detailTextLabel.text = [activity descriptionForSets];
     }
-
+    
     return cell;
 }
 
@@ -149,7 +158,7 @@
     } else if ([segue.identifier isEqualToString:@"ActivityToSet"]) {
         WTSetViewController *controller = [segue destinationViewController];
         controller.managedObjectContext = self.managedObjectContext;
-        
+
         // Pull the activity corresponding to the cell and set it in the target controller
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         Activity *activity = [self.fetchedResultsController objectAtIndexPath:indexPath];
@@ -179,7 +188,7 @@
             break;
 
         case NSFetchedResultsChangeUpdate:
-            [self tableView:tableView cellForRowAtIndexPath:indexPath];
+            [tableView reloadRowsAtIndexPaths:@[ indexPath ] withRowAnimation:UITableViewRowAnimationNone];
             break;
 
         case NSFetchedResultsChangeMove:

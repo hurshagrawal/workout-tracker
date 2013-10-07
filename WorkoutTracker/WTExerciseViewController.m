@@ -117,7 +117,7 @@
         NSString *exerciseName = textField.text;
         textField.text = nil;
         
-        exercise =[NSEntityDescription insertNewObjectForEntityForName:@"Exercise" inManagedObjectContext:self.managedObjectContext];
+        exercise = [NSEntityDescription insertNewObjectForEntityForName:@"Exercise" inManagedObjectContext:self.managedObjectContext];
         exercise.name = exerciseName;
         exercise.createdAt = [NSDate date];
         
@@ -159,7 +159,7 @@
             break;
             
         case NSFetchedResultsChangeUpdate:
-            [self tableView:tableView cellForRowAtIndexPath:indexPath];
+            [tableView reloadRowsAtIndexPaths:@[ indexPath ] withRowAnimation:UITableViewRowAnimationNone];
             break;
             
         case NSFetchedResultsChangeMove:

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>695EBE04-C2A6-4D79-9069-50BA5FA76978</string>
+	<key>IDESourceControlProjectName</key>
+	<string>WorkoutTracker</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>86A48C85-5D3A-481B-BE08-8E7C8AD62728</key>
+		<string>ssh://github.com/hurshagrawal/workout-tracker.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>WorkoutTracker.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>86A48C85-5D3A-481B-BE08-8E7C8AD62728</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/hurshagrawal/workout-tracker.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>86A48C85-5D3A-481B-BE08-8E7C8AD62728</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>86A48C85-5D3A-481B-BE08-8E7C8AD62728</string>
+			<key>IDESourceControlWCCName</key>
+			<string>WorkoutTracker</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -31,6 +31,7 @@
 		B8B68CBE17E50C6000BB8AEF /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B68CBD17E50C6000BB8AEF /* Exercise.m */; };
 		B8ECA17E17F77786002343EA /* UIView+WTView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8ECA17D17F77786002343EA /* UIView+WTView.m */; };
 		B8ECA1F417F7D79E002343EA /* NSDate+WTDate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8ECA1F317F7D79E002343EA /* NSDate+WTDate.m */; };
+		D846F3955BB645DD81F50C55 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BBEF05331244BCB98D208F8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6BBEF05331244BCB98D208F8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B818AAD417E4DC1500DBD0BB /* WorkoutTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B818AAD717E4DC1500DBD0BB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B818AAD917E4DC1500DBD0BB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -79,9 +81,10 @@
 		B8B68CBD17E50C6000BB8AEF /* Exercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Exercise.m; path = models/Exercise.m; sourceTree = "<group>"; };
 		B8ECA17C17F77786002343EA /* UIView+WTView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+WTView.h"; path = "extensions/UIView+WTView.h"; sourceTree = "<group>"; };
 		B8ECA17D17F77786002343EA /* UIView+WTView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+WTView.m"; path = "extensions/UIView+WTView.m"; sourceTree = "<group>"; };
-		B8ECA1F117F7D165002343EA /* WorkoutTracker 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkoutTracker 2.xcdatamodel"; sourceTree = "<group>"; };
+		B8ECA1F117F7D165002343EA /* WorkoutTracker 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "WorkoutTracker 2.xcdatamodel"; sourceTree = "<group>"; };
 		B8ECA1F217F7D79E002343EA /* NSDate+WTDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+WTDate.h"; path = "extensions/NSDate+WTDate.h"; sourceTree = "<group>"; };
 		B8ECA1F317F7D79E002343EA /* NSDate+WTDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+WTDate.m"; path = "extensions/NSDate+WTDate.m"; sourceTree = "<group>"; };
+		E2B01DFB9447461C93E82597 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,7 @@
 				B818AADA17E4DC1500DBD0BB /* CoreGraphics.framework in Frameworks */,
 				B818AADC17E4DC1500DBD0BB /* UIKit.framework in Frameworks */,
 				B818AAD817E4DC1500DBD0BB /* Foundation.framework in Frameworks */,
+				D846F3955BB645DD81F50C55 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +120,7 @@
 				B818AAFC17E4DC1600DBD0BB /* WorkoutTrackerTests */,
 				B818AAD617E4DC1500DBD0BB /* Frameworks */,
 				B818AAD517E4DC1500DBD0BB /* Products */,
+				E2B01DFB9447461C93E82597 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,6 +141,7 @@
 				B818AAD917E4DC1500DBD0BB /* CoreGraphics.framework */,
 				B818AADB17E4DC1500DBD0BB /* UIKit.framework */,
 				B818AAF617E4DC1600DBD0BB /* XCTest.framework */,
+				6BBEF05331244BCB98D208F8 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -231,9 +237,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B818AB0617E4DC1600DBD0BB /* Build configuration list for PBXNativeTarget "WorkoutTracker" */;
 			buildPhases = (
+				36815C2925C040FE9FB38304 /* Check Pods Manifest.lock */,
 				B818AAD017E4DC1500DBD0BB /* Sources */,
 				B818AAD117E4DC1500DBD0BB /* Frameworks */,
 				B818AAD217E4DC1500DBD0BB /* Resources */,
+				5AC41F6507FF4820BAE01FFE /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -318,6 +326,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		36815C2925C040FE9FB38304 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5AC41F6507FF4820BAE01FFE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B818AAD017E4DC1500DBD0BB /* Sources */ = {
@@ -455,6 +496,7 @@
 		};
 		B818AB0717E4DC1600DBD0BB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2B01DFB9447461C93E82597 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -468,6 +510,7 @@
 		};
 		B818AB0817E4DC1600DBD0BB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2B01DFB9447461C93E82597 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
