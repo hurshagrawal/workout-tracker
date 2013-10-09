@@ -97,16 +97,21 @@
 }
 
 - (IBAction)selectPreviousDay:(UIButton *)sender {
-    NSTimeInterval subtractDay = -24 * 60 * 60;
-    self.currentlyEditingDate = [self.currentlyEditingDate dateByAddingTimeInterval:subtractDay];
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    [components setDay:-1];
+    
+    self.currentlyEditingDate = [[NSCalendar currentCalendar] dateByAddingComponents:components toDate:self.currentlyEditingDate options:0];
+    
     [self reloadDataWithAnimation:UITableViewRowAnimationRight];
 }
 
 - (IBAction)selectNextDay:(UIButton *)sender {
-    NSTimeInterval addDay = 24 * 60 * 60;
-    self.currentlyEditingDate = [self.currentlyEditingDate dateByAddingTimeInterval:addDay];
-    [self reloadDataWithAnimation:UITableViewRowAnimationLeft];
+   NSDateComponents *components = [[NSDateComponents alloc] init];
+    [components setDay:1];
     
+    self.currentlyEditingDate = [[NSCalendar currentCalendar] dateByAddingComponents:components toDate:self.currentlyEditingDate options:0];
+    
+    [self reloadDataWithAnimation:UITableViewRowAnimationLeft];
 }
 
 #pragma mark - Table view data source
@@ -143,6 +148,23 @@
     }
     
     return cell;
+}
+
+// Override support for conditional editing of rows.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == [self.fetchedResultsController.fetchedObjects count]) {
+        return NO;
+    } else {
+        return YES;
+    }
+}
+
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.managedObjectContext deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+    }
 }
 
 #pragma mark - Navigation

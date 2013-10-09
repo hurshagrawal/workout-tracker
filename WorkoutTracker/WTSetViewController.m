@@ -81,8 +81,6 @@
     WTSetsTableViewCell* cell = (WTSetsTableViewCell *)[textField wt_superviewOfClass:[WTSetsTableViewCell class]];
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
     
-    NSLog(@"Persisting data");
-    
     Set *set;
     
     if (indexPath.row >= [self.tableView numberOfRowsInSection:indexPath.section] - 1) {

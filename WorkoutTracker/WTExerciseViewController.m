@@ -90,6 +90,30 @@
     return cell;
 }
 
+// Override support for conditional editing of rows.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == [self.fetchedResultsController.fetchedObjects count]) {
+        return NO;
+    } else {
+        return YES;
+    }
+}
+
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [UIAlertView showAlertViewWithTitle:@"Delete this exercise?"
+                                    message:@"Deleting this will delete all sets and reps of this exercise, as well."
+                          cancelButtonTitle:@"Cancel"
+                          otherButtonTitles:@[ @"Do it!" ]
+                                    handler:^(UIAlertView *alertView, NSInteger buttonIndex) {
+                                        Exercise *exercise = [self.fetchedResultsController objectAtIndexPath:indexPath];
+                                        [self.managedObjectContext deleteObject:exercise];
+                                    }];
+    }
+}
+
 
 #pragma mark - UITextFieldDelegate (new exercise text field)
 
