@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>Pods-NSDate+TimeAgo.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>Pods-libffi.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -22,7 +27,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>08A6AEDADBD14B4595509385</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1A38495C1ACB427F82A9ADC6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3800E8A7E02E43C0BF5ED383</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -32,7 +47,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>9F56F389B8B54334BFFB10F2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A18FF0BDA98B4646B2BE3C32</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B3F98C5399504A65A94481E9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

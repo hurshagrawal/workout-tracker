@@ -29,6 +29,7 @@
 		B8B68CB817E50C6000BB8AEF /* Set.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B68CB717E50C6000BB8AEF /* Set.m */; };
 		B8B68CBB17E50C6000BB8AEF /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B68CBA17E50C6000BB8AEF /* Activity.m */; };
 		B8B68CBE17E50C6000BB8AEF /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = B8B68CBD17E50C6000BB8AEF /* Exercise.m */; };
+		B8EB6F04181343D400731B4F /* WTPreviousActivityPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8EB6F03181343D400731B4F /* WTPreviousActivityPreviewView.m */; };
 		B8ECA17E17F77786002343EA /* UIView+WTView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8ECA17D17F77786002343EA /* UIView+WTView.m */; };
 		B8ECA1F417F7D79E002343EA /* NSDate+WTDate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8ECA1F317F7D79E002343EA /* NSDate+WTDate.m */; };
 		D846F3955BB645DD81F50C55 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BBEF05331244BCB98D208F8 /* libPods.a */; };
@@ -79,6 +80,8 @@
 		B8B68CBA17E50C6000BB8AEF /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Activity.m; path = models/Activity.m; sourceTree = "<group>"; };
 		B8B68CBC17E50C6000BB8AEF /* Exercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Exercise.h; path = models/Exercise.h; sourceTree = "<group>"; };
 		B8B68CBD17E50C6000BB8AEF /* Exercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Exercise.m; path = models/Exercise.m; sourceTree = "<group>"; };
+		B8EB6F02181343D400731B4F /* WTPreviousActivityPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTPreviousActivityPreviewView.h; path = views/WTPreviousActivityPreviewView.h; sourceTree = "<group>"; };
+		B8EB6F03181343D400731B4F /* WTPreviousActivityPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTPreviousActivityPreviewView.m; path = views/WTPreviousActivityPreviewView.m; sourceTree = "<group>"; };
 		B8ECA17C17F77786002343EA /* UIView+WTView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+WTView.h"; path = "extensions/UIView+WTView.h"; sourceTree = "<group>"; };
 		B8ECA17D17F77786002343EA /* UIView+WTView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+WTView.m"; path = "extensions/UIView+WTView.m"; sourceTree = "<group>"; };
 		B8ECA1F117F7D165002343EA /* WorkoutTracker 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "WorkoutTracker 2.xcdatamodel"; sourceTree = "<group>"; };
@@ -200,6 +203,8 @@
 		B82F283517E7D90B0032E6BD /* views */ = {
 			isa = PBXGroup;
 			children = (
+				B8EB6F02181343D400731B4F /* WTPreviousActivityPreviewView.h */,
+				B8EB6F03181343D400731B4F /* WTPreviousActivityPreviewView.m */,
 				B82F283217E7D9010032E6BD /* WTSetsTableViewCell.h */,
 				B82F283317E7D9010032E6BD /* WTSetsTableViewCell.m */,
 			);
@@ -371,6 +376,7 @@
 				B82F283417E7D9010032E6BD /* WTSetsTableViewCell.m in Sources */,
 				B818AAE817E4DC1600DBD0BB /* WTAppDelegate.m in Sources */,
 				B8ECA1F417F7D79E002343EA /* NSDate+WTDate.m in Sources */,
+				B8EB6F04181343D400731B4F /* WTPreviousActivityPreviewView.m in Sources */,
 				B8ECA17E17F77786002343EA /* UIView+WTView.m in Sources */,
 				B8B68CB817E50C6000BB8AEF /* Set.m in Sources */,
 				B8B68CBB17E50C6000BB8AEF /* Activity.m in Sources */,

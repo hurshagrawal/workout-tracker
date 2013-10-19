@@ -17,4 +17,5 @@
     #import <BlocksKit/BlocksKit.h>
     #import "UIView+WTView.h"
     #import "NSDate+WTDate.h"
+    #import "NSDate+TimeAgo.h"
 #endif
