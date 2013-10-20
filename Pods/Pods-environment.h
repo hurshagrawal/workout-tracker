@@ -12,11 +12,11 @@
 #define COCOAPODS_VERSION_MINOR_BlocksKit 8
 #define COCOAPODS_VERSION_PATCH_BlocksKit 3
 
-// NSDate+TimeAgo
-#define COCOAPODS_POD_AVAILABLE_NSDate_TimeAgo
-#define COCOAPODS_VERSION_MAJOR_NSDate_TimeAgo 1
-#define COCOAPODS_VERSION_MINOR_NSDate_TimeAgo 0
-#define COCOAPODS_VERSION_PATCH_NSDate_TimeAgo 2
+// MagicalRecord
+#define COCOAPODS_POD_AVAILABLE_MagicalRecord
+#define COCOAPODS_VERSION_MAJOR_MagicalRecord 2
+#define COCOAPODS_VERSION_MINOR_MagicalRecord 2
+#define COCOAPODS_VERSION_PATCH_MagicalRecord 0
 
 // libffi
 #define COCOAPODS_POD_AVAILABLE_libffi

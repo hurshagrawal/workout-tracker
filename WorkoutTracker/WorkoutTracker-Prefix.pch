@@ -11,11 +11,17 @@
 #endif
 
 #ifdef __OBJC__
+    //Omit the "MR_" prefix to all MagicalRecord related method
+    #define MR_SHORTHAND
+
+    //Turn off MagicalRecord logging
+    #define MR_ENABLE_ACTIVE_RECORD_LOGGING 0
+
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
     #import <BlocksKit/BlocksKit.h>
     #import "UIView+WTView.h"
     #import "NSDate+WTDate.h"
-    #import "NSDate+TimeAgo.h"
+    #import "CoreData+MagicalRecord.h"
 #endif

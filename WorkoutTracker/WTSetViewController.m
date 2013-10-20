@@ -31,7 +31,7 @@
     Activity *previousActivity = [self previousActivityForExercise];
     [self.view addSubview:previousActivityView];
 
-    previousActivityView.exerciseDate = [[previousActivity performedAt] timeAgo];
+    previousActivityView.exerciseDate = [[previousActivity performedAt] description];
     previousActivityView.setsDescription = [previousActivity descriptionForSets];
 }
 

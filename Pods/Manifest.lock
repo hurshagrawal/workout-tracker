@@ -2,15 +2,15 @@ PODS:
   - BlocksKit (1.8.3):
     - libffi
   - libffi (3.0.13)
-  - NSDate+TimeAgo (1.0.2)
+  - MagicalRecord (2.2)
 
 DEPENDENCIES:
   - BlocksKit (~> 1.8.3)
-  - NSDate+TimeAgo
+  - MagicalRecord
 
 SPEC CHECKSUMS:
   BlocksKit: 27257f9cbbec0ea98c80ba83cc2ea7111ae62eb2
   libffi: 64ef39353e747bb2b25e1026afd96a157bf9231c
-  NSDate+TimeAgo: fe93d3042e83093ae3630bc47ae7d57f782733f6
+  MagicalRecord: b1fc46c99a9749fe7fe7e6f43a89b62ef5201933
 
 COCOAPODS: 0.25.0

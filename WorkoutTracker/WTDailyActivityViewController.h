@@ -10,8 +10,7 @@
 
 @interface WTDailyActivityViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
-@property (nonatomic, strong) NSManagedObjectContext* managedObjectContext;
-@property (nonatomic, strong) NSFetchedResultsController* fetchedResultsController;
 @property (nonatomic, strong) NSDate *currentlyEditingDate;
+@property (nonatomic, strong) NSArray *displayedActivities;
 
 @end

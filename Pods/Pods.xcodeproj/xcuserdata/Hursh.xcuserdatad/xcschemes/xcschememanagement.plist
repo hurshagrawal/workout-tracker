@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>Pods-MagicalRecord.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 		<key>Pods-NSDate+TimeAgo.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -32,12 +37,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>0B735C9603024D4883B6132B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1A38495C1ACB427F82A9ADC6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>3800E8A7E02E43C0BF5ED383</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>74117D915C61451EBFDF9D8B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,7 +72,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>B17F149E43CE4F4DA960D112</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B3F98C5399504A65A94481E9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BDB0469A79D848CBB3AFBC7E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
