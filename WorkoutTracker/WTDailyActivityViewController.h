@@ -10,7 +10,13 @@
 
 @interface WTDailyActivityViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
+typedef NS_ENUM(NSInteger, WTDailyActivityViewSection) {
+    WTActivitySection = 0,
+    WTExerciseSection = 1
+};
+
 @property (nonatomic, strong) NSDate *currentlyEditingDate;
 @property (nonatomic, strong) NSArray *displayedActivities;
+@property (nonatomic, strong) NSArray *displayedExercises;
 
 @end

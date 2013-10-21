@@ -68,7 +68,7 @@
     NSError *error;
     NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
 
-    if (results != nil) {
+    if (results != nil && [results count] > 0) {
         return results[0];
     } else {
         return nil;
@@ -87,7 +87,6 @@
 {
     return [self.activity.sets count] + 1;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
