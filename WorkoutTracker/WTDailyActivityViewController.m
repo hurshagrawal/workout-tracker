@@ -21,14 +21,10 @@
 CGFloat exerciseHeaderHeight = 40.0;
 CGFloat activityRowHeight = 90.0;
 CGFloat exerciseRowHeight = 50.0;
-UITextField *activeField;
-UIEdgeInsets defaultInset;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    [self registerForKeyboardNotifications];
 
     self.currentlyEditingDate = [[NSDate date] beginningOfDay];
 }
@@ -228,59 +224,6 @@ UIEdgeInsets defaultInset;
     [self performSegueWithIdentifier:@"ExerciseToSet" sender:textField];
 
     return YES;
-}
-
-- (void)textFieldDidBeginEditing:(UITextField *)textField
-{
-    activeField = textField;
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField
-{
-    activeField = nil;
-}
-
-- (void)registerForKeyboardNotifications
-{
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(scrollToActiveField:)
-                                                 name:UIKeyboardDidShowNotification
-                                               object:nil];
-
-   [[NSNotificationCenter defaultCenter] addObserver:self
-                                            selector:@selector(resetScrollPosition)
-                                                name:UIKeyboardWillHideNotification
-                                              object:nil];
-
-}
-
-// Called when the UIKeyboardDidShowNotification is sent.
-- (void)scrollToActiveField:(NSNotification*)notification
-{
-    NSDictionary* info = [notification userInfo];
-    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
-    defaultInset = self.tableView.contentInset;
-    self.tableView.contentInset = contentInsets;
-    self.tableView.scrollIndicatorInsets = contentInsets;
-
-    // From http://stackoverflow.com/a/4837510/938799
-    CGRect aRect = self.view.frame;
-    aRect.size.height -= kbSize.height;
-    CGPoint origin = activeField.frame.origin;
-    origin.y -= self.tableView.contentOffset.y;
-    if (!CGRectContainsPoint(aRect, origin) ) {
-        CGPoint scrollPoint = CGPointMake(0.0, activeField.frame.origin.y - (aRect.size.height));
-        [self.tableView setContentOffset:scrollPoint animated:YES];
-    }
-}
-
-// Called when the UIKeyboardWillHideNotification is sent
-- (void)resetScrollPosition
-{
-    self.tableView.contentInset = defaultInset;
-    self.tableView.scrollIndicatorInsets = defaultInset;
 }
 
 #pragma mark - Navigation

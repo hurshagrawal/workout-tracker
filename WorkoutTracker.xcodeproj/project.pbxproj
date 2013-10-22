@@ -31,6 +31,10 @@
 		B8EB6F04181343D400731B4F /* WTPreviousActivityPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8EB6F03181343D400731B4F /* WTPreviousActivityPreviewView.m */; };
 		B8ECA17E17F77786002343EA /* UIView+WTView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8ECA17D17F77786002343EA /* UIView+WTView.m */; };
 		B8ECA1F417F7D79E002343EA /* NSDate+WTDate.m in Sources */ = {isa = PBXBuildFile; fileRef = B8ECA1F317F7D79E002343EA /* NSDate+WTDate.m */; };
+		B8F4E2BB18161E1900AF7367 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F4E2B418161E1900AF7367 /* TPKeyboardAvoidingCollectionView.m */; };
+		B8F4E2BC18161E1900AF7367 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F4E2B618161E1900AF7367 /* TPKeyboardAvoidingScrollView.m */; };
+		B8F4E2BD18161E1900AF7367 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F4E2B818161E1900AF7367 /* TPKeyboardAvoidingTableView.m */; };
+		B8F4E2BE18161E1900AF7367 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F4E2BA18161E1900AF7367 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		D846F3955BB645DD81F50C55 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BBEF05331244BCB98D208F8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +88,14 @@
 		B8ECA1F117F7D165002343EA /* WorkoutTracker 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "WorkoutTracker 2.xcdatamodel"; sourceTree = "<group>"; };
 		B8ECA1F217F7D79E002343EA /* NSDate+WTDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+WTDate.h"; path = "extensions/NSDate+WTDate.h"; sourceTree = "<group>"; };
 		B8ECA1F317F7D79E002343EA /* NSDate+WTDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+WTDate.m"; path = "extensions/NSDate+WTDate.m"; sourceTree = "<group>"; };
+		B8F4E2B318161E1900AF7367 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		B8F4E2B418161E1900AF7367 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		B8F4E2B518161E1900AF7367 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		B8F4E2B618161E1900AF7367 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		B8F4E2B718161E1900AF7367 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		B8F4E2B818161E1900AF7367 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		B8F4E2B918161E1900AF7367 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		B8F4E2BA18161E1900AF7367 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		E2B01DFB9447461C93E82597 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,7 +161,6 @@
 		B818AADD17E4DC1500DBD0BB /* WorkoutTracker */ = {
 			isa = PBXGroup;
 			children = (
-				B8ECA17B17F77746002343EA /* extensions */,
 				B8B68CB317E507D000BB8AEF /* WTDailyActivityViewController.h */,
 				B8B68CB417E507D000BB8AEF /* WTDailyActivityViewController.m */,
 				B818AAE617E4DC1600DBD0BB /* WTAppDelegate.h */,
@@ -162,6 +173,8 @@
 				B818AB0E17E4DCC800DBD0BB /* WorkoutTracker.xcdatamodeld */,
 				B8B68CBF17E50C6A00BB8AEF /* models */,
 				B82F283517E7D90B0032E6BD /* views */,
+				B8F4E29918161C5500AF7367 /* external */,
+				B8ECA17B17F77746002343EA /* extensions */,
 			);
 			path = WorkoutTracker;
 			sourceTree = "<group>";
@@ -228,6 +241,29 @@
 				B8ECA17D17F77786002343EA /* UIView+WTView.m */,
 			);
 			name = extensions;
+			sourceTree = "<group>";
+		};
+		B8F4E29918161C5500AF7367 /* external */ = {
+			isa = PBXGroup;
+			children = (
+				B8F4E2A618161D2200AF7367 /* TPKeyboardAvoiding */,
+			);
+			path = external;
+			sourceTree = "<group>";
+		};
+		B8F4E2A618161D2200AF7367 /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				B8F4E2B318161E1900AF7367 /* TPKeyboardAvoidingCollectionView.h */,
+				B8F4E2B418161E1900AF7367 /* TPKeyboardAvoidingCollectionView.m */,
+				B8F4E2B518161E1900AF7367 /* TPKeyboardAvoidingScrollView.h */,
+				B8F4E2B618161E1900AF7367 /* TPKeyboardAvoidingScrollView.m */,
+				B8F4E2B718161E1900AF7367 /* TPKeyboardAvoidingTableView.h */,
+				B8F4E2B818161E1900AF7367 /* TPKeyboardAvoidingTableView.m */,
+				B8F4E2B918161E1900AF7367 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				B8F4E2BA18161E1900AF7367 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+			);
+			path = TPKeyboardAvoiding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,11 +407,15 @@
 				B818AAE817E4DC1600DBD0BB /* WTAppDelegate.m in Sources */,
 				B8ECA1F417F7D79E002343EA /* NSDate+WTDate.m in Sources */,
 				B8EB6F04181343D400731B4F /* WTPreviousActivityPreviewView.m in Sources */,
+				B8F4E2BD18161E1900AF7367 /* TPKeyboardAvoidingTableView.m in Sources */,
 				B8ECA17E17F77786002343EA /* UIView+WTView.m in Sources */,
+				B8F4E2BC18161E1900AF7367 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				B8B68CB817E50C6000BB8AEF /* Set.m in Sources */,
 				B8B68CBB17E50C6000BB8AEF /* Activity.m in Sources */,
 				B8B68CBE17E50C6000BB8AEF /* Exercise.m in Sources */,
 				B82A9EBD17E6483F006FBDE8 /* WTSetViewController.m in Sources */,
+				B8F4E2BE18161E1900AF7367 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				B8F4E2BB18161E1900AF7367 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				B818AB1017E4DCC800DBD0BB /* WorkoutTracker.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
